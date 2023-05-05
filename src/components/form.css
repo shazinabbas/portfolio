@@ -1,118 +1,76 @@
-/* you can choose any color you want. don't be afraid to experiment  */
+.form {
+  margin: 0 auto;
+  max-width: 500px;
+}
 
-.input, button {
-    width: 100%;
-    height: 40px;
-    position: relative;
-    padding: 10px;
-    border: 0.1px solid #575cb5;
-  }
-  
-  button {
-    background: #6d74e3;
-    border: none;
-  }
-  
-  .wrapper {
-    position: relative;
-    transform: skewY(-14deg);
-  }
-  
-  .wrapper li, button {
-    position: relative;
-    list-style: none;
-    width: 200px;
-    z-index: var(--i);
-    transition: 0.3s;
-    color: white;
-  }
-  
-  .wrapper li::before, button::before {
-    position: absolute;
-    content: '';
-    background: #6d74e3;
-    top: 0;
-    left: -40px;
-    width: 40px;
-    height: 40px;
-    transform-origin: right;
-    transform: skewY(45deg);
-    transition: 0.3s;
-  }
-  
-  .wrapper li::after, button::after {
-    position: absolute;
-    content: '';
-    background: #6d74e3;
-    width: 200px;
-    height: 40px;
-    top: -40px;
-    left: 0;
-    transform-origin: bottom;
-    transform: skewX(45deg);
-    transition: 0.3s;
-  }
-  
-  .wrapper li:nth-child(1)::after, .wrapper li:nth-child(1)::before {
-    background-color: #d8daf7;
-  }
-  
-  .wrapper li:nth-child(2)::after, .wrapper li:nth-child(2)::before {
-    background-color: #c2c5f3;
-  }
-  
-  .wrapper li:nth-child(3)::after, .wrapper li:nth-child(3)::before {
-    background-color: #989deb;
-  }
-  
-  li .input {
-    outline: none;
-    border: none;
-    color: black;
-  }
-  
-  li .input::placeholder {
-    color: black;
-  }
-  
-  li:nth-child(1) .input {
-    background: #d8daf7;
-  }
-  
-  li:nth-child(2) .input {
-    background: #c2c5f3;
-  }
-  
-  li:nth-child(3) .input {
-    background: #989deb;
-  }
-  
-  
-  li:nth-child(1) .input:focus {
-    outline: none;
-    border: 3.5px solid #d8daf7;
-  }
-  
-  li:nth-child(2) .input:focus {
-    outline: none;
-    border: 3.5px solid #c2c5f3;
-  }
-  
-  li:nth-child(3) .input:focus {
-    outline: none;
-    border: 3.5px solid #989deb;
-  }
-  
-  .wrapper li:hover, button:hover {
-    transform: translateX(-20px);
-  }
-  
-  button:hover, button:hover::before, button:hover::after {
-    background: #575cb5;
-  }
-  
-  button:active {
-    transform: translateX(0px);
-  }
-  
-  
+.wrapper {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wrapper li {
+  position: relative;
+  margin-bottom: 15px;
+  padding-left: 44px;
+}
+
+.wrapper li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  background: #8a4baf;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.wrapper li:nth-child(odd)::before {
+  background: #047857;
+}
+
+.wrapper li:last-child {
+  margin-bottom: 0;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a5568;
+  background-color: #edf2f7;
+  transition: background-color 0.3s ease;
+}
+
+.input:focus {
+  outline: none;
+  background-color: #e2e8f0;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background-color: #8a4baf;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6b46c1;
+}
