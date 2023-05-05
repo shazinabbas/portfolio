@@ -1,6 +1,8 @@
+import React from "react";
 import './form.css';
+import withFormValidation from './withFormValidation';
 
-export default function Form() {
+function Form() {
   return (
     <form className="form">
       <ul className="wrapper">
@@ -20,3 +22,5 @@ export default function Form() {
     </form>
   );
 }
+
+export default withFormValidation(Form);
