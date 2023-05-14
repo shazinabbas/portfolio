@@ -1,15 +1,16 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
+import { OrbitControls, Preload, useGLTF , Float } from '@react-three/drei';
 
 import CanvasLoader from '../Loader';
 
 const Computers = ({ isMobile }) => {
   const computer = useGLTF('./desktop_pc/scene.gltf')
-
+  
   return (
 
     <mesh>
+      <Float  speed={1.75} rotationIntensity={1} floatIntensity={2}></Float>
       <hemisphereLight intensity={0.15}
       groundColor="black" />
       <pointLight intensity={1} />
@@ -25,8 +26,10 @@ const Computers = ({ isMobile }) => {
         object={computer.scene}
         scale={isMobile ? 0.5 : 0.75}
         position={isMobile ? [-1, -2, -2.1] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        rotation={[2 * Math.PI, 0, 6.25]}
+        
         />
+        
     </mesh>
   )
 }
@@ -62,6 +65,9 @@ const ComputersCanvas = () => {
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+          autoRotate
+          autoRotateSpeed={0.2}
+          reverseOrbit={false}
         />
         <Computers  isMobile={isMobile}/>
       </Suspense>
