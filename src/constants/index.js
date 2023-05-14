@@ -248,64 +248,64 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "OutPass",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Android app that will generate digital outpasses for hostellers who need to leave their hostels for various reasons such as going home, medical emergencies, etc. The main objective of the app is to provide a hassle-free and paperless way for hostellers to generate a valid outpass without the need for physical paperwork or manual approvals.",
     tags: [
       {
-        name: "react",
+        name: "java",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "firebase",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "xml",
         color: "pink-text-gradient",
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/shazinabbas/OutPass",
   },
   {
-    name: "Job IT",
+    name: "Quizzit",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "QUIZZIT is Graphical User Interface(GUI) quiz application using the Tkinter and firebase as realtime database in python. The major goal of this project is to create and join quizzes with ease which makes it fun and interactive. Quizzes can be made regardless of the number of questions with time restriction as a choice.",
     tags: [
       {
-        name: "react",
+        name: "python",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "tkinter",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "firebase",
         color: "pink-text-gradient",
       },
     ],
     image: jobit,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/shazinabbas/QuizzIt",
   },
   {
-    name: "Trip Guide",
+    name: "SES",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A management system which can be used in the schools and colleges for registering and managing the details during sports fest. It allows users to register and manage participant details, event schedules, rules, and results. It helps organize and manage sports fests efficiently and effectively.",
     tags: [
       {
-        name: "nextjs",
+        name: "C++",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "CSV",
         color: "green-text-gradient",
       },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
+      // {
+      //   name: "",
+      //   color: "pink-text-gradient",
+      // },
     ],
     image: tripguide,
     source_code_link: "https://github.com/",
