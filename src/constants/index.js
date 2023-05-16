@@ -286,7 +286,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: tripguide,
     source_code_link: "https://github.com/shazinabbas/QuizzIt",
   },
   {
@@ -307,7 +307,7 @@ const projects = [
       //   color: "pink-text-gradient",
       // },
     ],
-    image: tripguide,
+    image: jobit,
     source_code_link: "https://github.com/",
   },
 ];
