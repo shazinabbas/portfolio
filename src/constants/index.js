@@ -288,7 +288,7 @@ const projects = [
       },
     ],
     image: socialconnect,
-    source_code_link: "",
+    source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
   },
   {
     name: "Quizzit",
