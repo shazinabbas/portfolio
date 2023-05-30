@@ -33,6 +33,7 @@ import {
   gcp,
   bigquery,
   googlecloud,
+  socialconnect,
 } from "../assets";
 
 export const navLinks = [
@@ -267,6 +268,27 @@ const projects = [
     ],
     image: carrent,
     source_code_link: "https://github.com/shazinabbas/OutPass",
+  },
+  {
+    name: "SocialConnect",
+    description:
+      ""SocialConnect" is an innovative Figma design that envisions a mobile app aimed at connecting users with similar interests, fostering engaging discussions, and facilitating valuable networking opportunities. The design showcases a sleek and intuitive user interface, designed to provide a seamless experience for users to explore, connect, and interact with like-minded individuals.",
+    tags: [
+      {
+        name: "Figma",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "UI",
+        color: "green-text-gradient",
+      },
+      {
+        name: "UX",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: socialconnect,
+    source_code_link: "",
   },
   {
     name: "Quizzit",
