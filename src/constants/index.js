@@ -272,7 +272,7 @@ const projects = [
   {
     name: "SocialConnect",
     description:
-      ""SocialConnect" is an innovative Figma design that envisions a mobile app aimed at connecting users with similar interests, fostering engaging discussions, and facilitating valuable networking opportunities. The design showcases a sleek and intuitive user interface, designed to provide a seamless experience for users to explore, connect, and interact with like-minded individuals.",
+      "SocialConnect is an innovative Figma design that envisions a mobile app aimed at connecting users with similar interests, fostering engaging discussions, and facilitating valuable networking opportunities. The design showcases a sleek and intuitive user interface, designed to provide a seamless experience for users to explore, connect, and interact with like-minded individuals.",
     tags: [
       {
         name: "Figma",
