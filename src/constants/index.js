@@ -65,7 +65,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Google Cloud",
+    title: "UI/UX",
     icon: creator,
   },
 ];
