@@ -39,7 +39,7 @@ const Ball = (props) => {
         />
         <OrbitControls 
           autoRotate
-          autoRotateSpeed={0.1}
+          autoRotateSpeed={0.01}
           reverseOrbit={false}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
