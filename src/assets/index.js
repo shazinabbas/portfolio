@@ -41,6 +41,8 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import socialconnect from "./SocialConnect.jpeg";
+import uber from "./Mockup.jpeg";
+
 
 export {
   c,
@@ -82,4 +84,5 @@ export {
   tripguide,
   github1,
   socialconnect,
+  uber,
 };
