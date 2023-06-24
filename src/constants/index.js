@@ -252,7 +252,7 @@ const projects = [
   {
     name: "Uber Data Analytics",
   description:
-    "SocialConnect is an innovative Figma design that envisions a mobile app aimed at connecting users with similar interests, fostering engaging discussions, and facilitating valuable networking opportunities. The design showcases a sleek and intuitive user interface, designed to provide a seamless experience for users to explore, connect, and interact with like-minded individuals.",
+    "Uber Data Analytics is a project that utilizes GCP Storage, Python, Compute Instance, Mage Data Pipeline Tool, BigQuery, and Looker Studio to analyze Uber data. It aims to provide valuable insights by efficiently processing and visualizing the data. The project enables data-driven decision-making and optimization of Uber's operations through advanced analytics on the collected data.",
   tags: [
     {
       name: "Python",
