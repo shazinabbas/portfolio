@@ -16,7 +16,7 @@ const Ball = (props) => {
   
   return (
     
-    <Float speed={0.5} rotationIntensity={1.5} floatIntensity={2}>
+    <Float speed={0.5} rotationIntensity={1.5} floatIntensity={8}>
       <ambientLight intensity={0.25} />
       <directionalLight position={[0, 0, 0.05]} />
       <mesh castShadow receiveShadow scale={2.75} >
@@ -57,6 +57,7 @@ const BallCanvas = ({ icon }) => {
       frameloop='demand'
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
+      camera={{ position: [0, 0, 5.3], near: 0.1, far: 100 }}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
