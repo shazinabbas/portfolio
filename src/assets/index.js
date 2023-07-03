@@ -24,6 +24,8 @@ import pycharm from "./tech/pycharm.png";
 import github from "./tech/github.png";
 import googlecloud from "./tech/googlecloud.png";
 
+import teachnook from "./company/teachnook.png";
+import agumentik from "./company/agumentik.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -32,6 +34,8 @@ import socialconnect from "./SocialConnect.jpeg";
 import uber from "./Mockup.jpeg";
 
 export {
+agumentik,
+teachnook,
 logo,
 backend,
 creator,
