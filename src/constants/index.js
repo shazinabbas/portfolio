@@ -27,7 +27,7 @@ carrent,
 jobit,
 tripguide,
 socialconnect,
-uber
+uber,
 teachnook,
 agumentik
 } from "../assets";
