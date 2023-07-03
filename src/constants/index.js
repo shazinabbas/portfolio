@@ -150,7 +150,7 @@ const projects = [
       color: "pink-text-gradient",
     },
   ],
-  image: uber,
+  image: figma,
   source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
 },
   {
@@ -171,7 +171,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: socialconnect,
+    image: figma,
     source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
   },
   {
@@ -192,7 +192,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
+    image: figma,
     source_code_link: "https://github.com/shazinabbas/OutPass",
     fig: true,
   },
@@ -214,7 +214,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
+    image: figma,
     source_code_link: "https://github.com/shazinabbas/QuizzIt",
   },
   {
@@ -232,7 +232,7 @@ const projects = [
       },
       
     ],
-    image: tripguide,
+    image: figma,
     source_code_link: "https://github.com/",
   },
 ];
