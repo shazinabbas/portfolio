@@ -8,34 +8,6 @@ import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
 
-// const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
-//   return (
-//     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-//       <Tilt
-//         options={{
-//           max: 45,
-//           scale: 1,
-//           speed: 450
-//         }}
-//         className="bg-tertiary p-3 sm:p-5 rounded-2xl w-full sm:w-[360px]"
-//       >
-//         <div className="relative w-full h-0 pb-[56.25%] sm:pb-[75%]">
-//           {/* Rest of the code */}
-//         </div>
-//         <div className="mt-3 sm:mt-5">
-//           <h3 className="text-white font-bold text-[20px] sm:text-[24px]">{name}</h3>
-//           <p className="mt-2 text-secondary text-[12px] sm:text-[14px] leading-[16px] sm:leading-[20px]">
-//             {description}
-//           </p>
-//         </div>
-//         <div className="mt-2 sm:mt-4 flex flex-wrap gap-1 sm:gap-2">
-//           {/* Rest of the code */}
-//         </div>
-//       </Tilt>
-//     </motion.div>
-//   );
-// };
-
 const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
