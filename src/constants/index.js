@@ -28,6 +28,8 @@ jobit,
 tripguide,
 socialconnect,
 uber
+teachnook,
+agumentik
 } from "../assets";
 
 export const navLinks = [
@@ -235,4 +237,33 @@ const projects = [
   },
 ];
 
-export { services, technologies, projects };
+
+const experiences = [
+  {
+    title: "Data Science Intern",
+    company_name: "Teachnook",
+    icon: teachnook,
+    iconBg: "#ffffff",
+    date: "July 2022 - Aug 2022",
+    points: [
+      "Developing and maintaining data science projects using Python and other related technologies.",
+      "Working on real-world data science projects during internships to gain hands-on experience in the field.",
+      "Implementing data processing and analysis techniques to extract insights from large datasets.",
+      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+  {
+    title: "UI/UX Developer Intern",
+    company_name: "Agumentik Group of Companies",
+    icon: agumentik,
+    iconBg: "#E6DEDD",
+    date: "Jun 2023 - Present",
+    points: [
+      "Design intuitive and visually appealing applications and website themes that align with brand guidelines.",
+      "Collaborate with development teams to ennsure seamless implementation of designs.",
+      "Conduct user research and usability testing to gather feedback and iterate on design solutions.",
+      "Optimize designs for responsiveness anq accessibility across different devices and platforms.",
+    ],
+  },
+];
+export { services, technologies, projects, experiences };
