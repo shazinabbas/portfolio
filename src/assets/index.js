@@ -26,6 +26,8 @@ import googlecloud from "./tech/googlecloud.png";
 
 import teachnook from "./company/teachnook.png";
 import agumentik from "./company/agumentik.png";
+import instagram from "./company/instagram.png";
+import linkedin from "./company/linkedin.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
