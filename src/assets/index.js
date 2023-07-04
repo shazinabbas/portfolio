@@ -35,7 +35,11 @@ import tripguide from "./tripguide.png";
 import socialconnect from "./SocialConnect.jpeg";
 import uber from "./Mockup.jpeg";
 
+import loader from "./videos/loader.mp4"
+
+
 export {
+      loader,
 linkedin,
 instagram,
 agumentik,
