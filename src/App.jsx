@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
+import { useProgress } from "@react-three/drei";
 import {
   About,
   Contact,
@@ -13,8 +14,28 @@ import {
   BottomBar,
 } from "./components";
 
+import { loader } from "./assets";
+
+
+const LoadingPage = () => {
+  return (
+    <div className="flex items-center justify-center h-screen bg-black">
+      <video
+        autoPlay
+        loop
+        muted
+        style={{ maxWidth: "100%", maxHeight: "100%" }}
+      >
+        <source src={loader} type="video/mp4" />
+      </video>
+    </div>
+  );
+};
+
 const App = () => {
   const [showBottomBar, setShowBottomBar] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const { progress } = useProgress();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +55,21 @@ const App = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (progress === 100) {
+      setIsLoading(false);
+    }
+  }, [progress]);
+
+  if (isLoading) {
+    return (
+      <>
+        <LoadingPage />
+        <Preload3DObjects onComplete={() => setIsLoading(false)} />
+      </>
+    );
+  }
+
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
@@ -50,12 +86,27 @@ const App = () => {
           <Contact />
           <StarsCanvas />
           {showBottomBar && <BottomBar />}
-
         </div>
-       
       </div>
     </BrowserRouter>
   );
+};
+
+const Preload3DObjects = ({ onComplete }) => {
+  const { progress } = useProgress();
+
+  useEffect(() => {
+    // Simulating the loading of 3D objects
+    const loadingTimeout = setTimeout(() => {
+      onComplete();
+    }, 3000); // Replace this with your actual loading logic
+
+    return () => {
+      clearTimeout(loadingTimeout);
+    };
+  }, []);
+
+  return null;
 };
 
 export default App;
