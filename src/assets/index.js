@@ -36,6 +36,8 @@ import socialconnect from "./SocialConnect.jpeg";
 import uber from "./Mockup.jpeg";
 
 export {
+linkedin,
+instagram,
 agumentik,
 teachnook,
 logo,
