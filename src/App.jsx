@@ -34,6 +34,7 @@ const LoadingPage = () => {
 const App = () => {
   const [showBottomBar, setShowBottomBar] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const { progress } = useProgress();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,15 +54,17 @@ const App = () => {
     };
   }, []);
 
-  const onCompleteLoading = () => {
-    setIsLoading(false);
-  };
+  useEffect(() => {
+    if (progress === 100) {
+      setIsLoading(false);
+    }
+  }, [progress]);
 
   if (isLoading) {
     return (
       <>
         <LoadingPage />
-        <Preload3DObjects onComplete={onCompleteLoading} />
+        <Preload3DObjects onComplete={() => setIsLoading(false)} />
       </>
     );
   }
@@ -89,8 +92,10 @@ const App = () => {
 };
 
 const Preload3DObjects = ({ onComplete }) => {
+  const [loadingProgress, setLoadingProgress] = useState(0);
+
   useEffect(() => {
-    // List of 3D object file paths in order of priority
+    // List of 3D object file paths
     const objectPaths = ["./desktop_pc/scene.gltf", "./planet/scene.gltf"];
 
     const loader = new GLTFLoader();
@@ -103,7 +108,14 @@ const Preload3DObjects = ({ onComplete }) => {
             // Object loaded successfully
             resolve(gltf);
           },
-          undefined, // No progress callback
+          (progress) => {
+            // Progress callback
+            setLoadingProgress((prevProgress) =>
+              Math.round(
+                ((prevProgress + progress.loaded) / objectPaths.length) * 100
+              )
+            );
+          },
           (error) => {
             // Error callback
             reject(error);
@@ -112,11 +124,17 @@ const Preload3DObjects = ({ onComplete }) => {
       });
     };
 
-    const loadObjectsSequentially = async () => {
+    // Load computer model first
+    const loadComputerModel = async () => {
       try {
-        for (let i = 0; i < objectPaths.length; i++) {
-          await loadObject(objectPaths[i]);
-        }
+        const computerObject = await loadObject(objectPaths[0]);
+
+        // Do something with the loaded computer object if needed
+
+        // Load planet model next
+        const planetObject = await loadObject(objectPaths[1]);
+
+        // Do something with the loaded planet object if needed
 
         onComplete();
       } catch (error) {
@@ -125,10 +143,10 @@ const Preload3DObjects = ({ onComplete }) => {
       }
     };
 
-    loadObjectsSequentially();
+    loadComputerModel();
 
+    // Cleanup
     return () => {
-      // Cleanup or cancellation if necessary
     };
   }, []);
 
