@@ -99,7 +99,7 @@ const Preload3DObjects = ({ onComplete }) => {
     // Simulating the loading of 3D objects
     const loadingTimeout = setTimeout(() => {
       onComplete();
-    }, 3000); // Replace this with your actual loading logic
+    }, 7000); // Replace this with your actual loading logic
 
     return () => {
       clearTimeout(loadingTimeout);
