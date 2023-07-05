@@ -93,9 +93,10 @@ const App = () => {
 
 const Preload3DObjects = ({ onComplete }) => {
   const [loadingProgress, setLoadingProgress] = useState(0);
+  const { progress } = useProgress();
 
   useEffect(() => {
-    // List of 3D object file paths
+    // List of 3D object file paths in order of priority
     const objectPaths = ["./desktop_pc/scene.gltf", "./planet/scene.gltf"];
 
     const loader = new GLTFLoader();
@@ -110,11 +111,7 @@ const Preload3DObjects = ({ onComplete }) => {
           },
           (progress) => {
             // Progress callback
-            setLoadingProgress((prevProgress) =>
-              Math.round(
-                ((prevProgress + progress.loaded) / objectPaths.length) * 100
-              )
-            );
+            setLoadingProgress(progress.loaded / progress.total);
           },
           (error) => {
             // Error callback
@@ -124,13 +121,12 @@ const Preload3DObjects = ({ onComplete }) => {
       });
     };
 
-    // Load all objects
-    const loadAllObjects = async () => {
+    const loadObjectsSequentially = async () => {
       try {
-        const objectPromises = objectPaths.map((path) => loadObject(path));
-        const objects = await Promise.all(objectPromises);
-        
-        // Do something with the loaded objects if needed
+        for (let i = 0; i < objectPaths.length; i++) {
+          await loadObject(objectPaths[i]);
+          setLoadingProgress((i + 1) / objectPaths.length);
+        }
 
         onComplete();
       } catch (error) {
@@ -139,14 +135,29 @@ const Preload3DObjects = ({ onComplete }) => {
       }
     };
 
-    loadAllObjects();
+    loadObjectsSequentially();
 
     // Cleanup
     return () => {
+      // Cancel any ongoing loading processes if necessary
     };
   }, []);
 
-  return null;
+  useEffect(() => {
+    if (progress === 100) {
+      onComplete();
+    }
+  }, [progress, onComplete]);
+
+  return (
+    <div className="progress-bar-container">
+      <div
+        className="progress-bar"
+        style={{ width: `${(loadingProgress * 100).toFixed(2)}%` }}
+      ></div>
+    </div>
+  );
 };
 
 export default App;
+
