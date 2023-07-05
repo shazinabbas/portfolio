@@ -1,112 +1,68 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { useProgress } from "@react-three/drei";
+import React, { Suspense } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import {
-  About,
-  Contact,
-  Feedbacks,
-  Hero,
-  Navbar,
-  Tech,
-  Works,
-  StarsCanvas,
-  Experience,
-  BottomBar,
-} from "./components";
+  Decal,
+  Float,
+  OrbitControls,
+  Preload,
+  useTexture,
+} from "@react-three/drei";
 
-import { loader } from "./assets";
+import CanvasLoader from "../Loader";
+import { random } from "maath";
 
+const Ball = (props) => {
+  const [decal] = useTexture([props.imgUrl]);
 
-const LoadingPage = () => {
   return (
-    <div className="flex items-center justify-center h-screen bg-black">
-      <video
-        autoPlay
-        loop
-        muted
-        style={{ maxWidth: "100%", maxHeight: "100%" }}
-      >
-        <source src={loader} type="video/mp4" />
-      </video>
-    </div>
+    <Float speed={0.75} rotationIntensity={1} floatIntensity={8}>
+      <ambientLight intensity={0.25} />
+      <directionalLight position={[0, 0, 0.05]} />
+      <mesh castShadow receiveShadow scale={2.75}>
+        <icosahedronGeometry args={[1, 1]} />
+        <meshStandardMaterial
+          color="#fff8eb"
+          polygonOffset
+          polygonOffsetFactor={-5}
+          flatShading
+        />
+
+        <Decal
+          // autoRotate
+          position={[0, 0, 1]}
+          rotation={[2 * Math.PI, 0, 6.25]}
+          scale={1}
+          map={decal}
+          flatShading
+        />
+        <OrbitControls
+          autoRotate
+          autoRotateSpeed={0.2}
+          reverseOrbit={false}
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+      </mesh>
+    </Float>
   );
 };
 
-const App = () => {
-  const [showBottomBar, setShowBottomBar] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const { progress } = useProgress();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollPosition = window.scrollY;
-
-      const isAtBottom = scrollPosition + windowHeight >= documentHeight;
-
-      setShowBottomBar(isAtBottom);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (progress === 100) {
-      setIsLoading(false);
-    }
-  }, [progress]);
-
-  if (isLoading) {
-    return (
-      <>
-        <LoadingPage />
-        <Preload3DObjects onComplete={() => setIsLoading(false)} />
-      </>
-    );
-  }
-
+const BallCanvas = ({ icon }) => {
   return (
-    <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        {/* <Feedbacks /> */}
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
-          {showBottomBar && <BottomBar />}
-        </div>
-      </div>
-    </BrowserRouter>
+    <Canvas
+      frameloop="demand"
+      dpr={[1, 2]}
+      gl={{ preserveDrawingBuffer: true }}
+      camera={{ position: [0, 0, 5.3], near: 0.1, far: 100 }}
+    >
+      <Suspense >
+        <OrbitControls enableZoom={false} />
+        <Ball imgUrl={icon} />
+      </Suspense>
+      <Preload all />
+    </Canvas>
   );
 };
 
-const Preload3DObjects = ({ onComplete }) => {
-  const { progress } = useProgress();
-
-  useEffect(() => {
-    // Simulating the loading of 3D objects
-    const loadingTimeout = setTimeout(() => {
-      onComplete();
-    }, 7000); // Replace this with your actual loading logic
-
-    return () => {
-      clearTimeout(loadingTimeout);
-    };
-  }, []);
-
-  return null;
-};
-
-export default App;
+export default BallCanvas;
