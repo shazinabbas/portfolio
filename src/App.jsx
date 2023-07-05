@@ -34,7 +34,6 @@ const LoadingPage = () => {
 const App = () => {
   const [showBottomBar, setShowBottomBar] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const { progress } = useProgress();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,17 +53,15 @@ const App = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (progress === 100) {
-      setIsLoading(false);
-    }
-  }, [progress]);
+  const onCompleteLoading = () => {
+    setIsLoading(false);
+  };
 
   if (isLoading) {
     return (
       <>
         <LoadingPage />
-        <Preload3DObjects onComplete={() => setIsLoading(false)} />
+        <Preload3DObjects onComplete={onCompleteLoading} />
       </>
     );
   }
@@ -92,9 +89,6 @@ const App = () => {
 };
 
 const Preload3DObjects = ({ onComplete }) => {
-  const [loadingProgress, setLoadingProgress] = useState(0);
-  const { progress } = useProgress();
-
   useEffect(() => {
     // List of 3D object file paths in order of priority
     const objectPaths = ["./desktop_pc/scene.gltf", "./planet/scene.gltf"];
@@ -109,10 +103,7 @@ const Preload3DObjects = ({ onComplete }) => {
             // Object loaded successfully
             resolve(gltf);
           },
-          (progress) => {
-            // Progress callback
-            setLoadingProgress(progress.loaded / progress.total);
-          },
+          undefined, // No progress callback
           (error) => {
             // Error callback
             reject(error);
@@ -125,7 +116,6 @@ const Preload3DObjects = ({ onComplete }) => {
       try {
         for (let i = 0; i < objectPaths.length; i++) {
           await loadObject(objectPaths[i]);
-          setLoadingProgress((i + 1) / objectPaths.length);
         }
 
         onComplete();
@@ -137,27 +127,12 @@ const Preload3DObjects = ({ onComplete }) => {
 
     loadObjectsSequentially();
 
-    // Cleanup
     return () => {
-      // Cancel any ongoing loading processes if necessary
+      // Cleanup or cancellation if necessary
     };
   }, []);
 
-  useEffect(() => {
-    if (progress === 100) {
-      onComplete();
-    }
-  }, [progress, onComplete]);
-
-  return (
-    <div className="progress-bar-container">
-      <div
-        className="progress-bar"
-        style={{ width: `${(loadingProgress * 100).toFixed(2)}%` }}
-      ></div>
-    </div>
-  );
+  return null;
 };
 
 export default App;
-
