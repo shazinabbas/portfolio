@@ -257,7 +257,7 @@ const experiences = [
     company_name: "Agumentik Group of Companies",
     icon: agumentik,
     iconBg: "#E6DEDD",
-    date: "Jun 2023 - Present",
+    date: "Jun 2023 - Aug 2023",
     points: [
       "Design intuitive and visually appealing applications and website themes that align with brand guidelines.",
       "Collaborate with development teams to ennsure seamless implementation of designs.",
