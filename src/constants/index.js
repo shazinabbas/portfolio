@@ -29,7 +29,8 @@ tripguide,
 socialconnect,
 uber,
 teachnook,
-agumentik
+agumentik,
+carrental
 } from "../assets";
 
 export const navLinks = [
@@ -131,7 +132,28 @@ const technologies = [
 
 
 const projects = [
-
+  
+{
+    name: "CarRental",
+  description:
+    "SocialConnect is an innovative Figma design that envisions a mobile app aimed at connecting users with similar interests, fostering engaging discussions, and facilitating valuable networking opportunities. The design showcases a sleek and intuitive user interface, designed to provide a seamless experience for users to explore, connect, and interact with like-minded individuals.",
+  tags: [
+    {
+      name: "Python",
+      color: "blue-text-gradient",
+    },
+    {
+      name: "Google Cloud",
+      color: "green-text-gradient",
+    },
+    {
+      name: "MAGE-AI",
+      color: "pink-text-gradient",
+    },
+  ],
+  image: carrental,
+  source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
+},
   {
     name: "Uber Data Analytics",
   description:
