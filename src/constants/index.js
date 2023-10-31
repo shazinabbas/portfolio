@@ -152,7 +152,7 @@ const projects = [
       color: "pink-text-gradient",
     },
   ],
-  image: preview,
+  image: carrental,
   source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
 },
   {
