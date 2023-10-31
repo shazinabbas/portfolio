@@ -30,6 +30,7 @@ import instagram from "./company/instagram.png";
 import linkedin from "./company/linkedin.png";
 
 import carrent from "./carrent.png";
+import carrental from "./CarRental.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import socialconnect from "./SocialConnect.jpeg";
@@ -39,7 +40,8 @@ import loader from "./videos/loader.mp4"
 
 
 export {
-      loader,
+carrental,
+loader,
 linkedin,
 instagram,
 agumentik,
