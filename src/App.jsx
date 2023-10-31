@@ -17,24 +17,8 @@ import { loader } from "./assets";
 import LoadingBar from 'react-top-loading-bar';
 
 
-const LoadingPage = () => {
-  return (
-    <div className="flex items-center justify-center h-screen bg-black">
-      <video
-        autoPlay
-        loop
-        muted
-        style={{ maxWidth: "100%", maxHeight: "100%" }}
-      >
-        <source src={loader} type="video/mp4" />
-      </video>
-    </div>
-  );
-};
-
 const App = () => {
   const [showBottomBar, setShowBottomBar] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const { progress } = useProgress();
   const loadingBarRef = useRef(null);
 
@@ -57,24 +41,16 @@ const App = () => {
   }, []);
 
   useEffect(() => {
+    loadingBarRef.current.continuousStart();
     if (progress === 100) {
-      setIsLoading(false);
+      loadingBarRef.current.complete();
     }
   }, [progress]);
-
-  if (isLoading) {
-    return (
-      <>
-        <LoadingPage />
-        <Preload3DObjects onComplete={() => setIsLoading(false)} />
-      </>
-    );
-  }
 
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <LoadingBar color='#f11946' ref={loadingBarRef} /> 
+        <LoadingBar color='#915eff' ref={loadingBarRef} /> 
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
@@ -92,68 +68,6 @@ const App = () => {
       </div>
     </BrowserRouter>
   );
-};
-
-const Preload3DObjects = ({ onComplete }) => {
-  const [loadingProgress, setLoadingProgress] = useState(0);
-
-  useEffect(() => {
-    // List of 3D object file paths
-    const objectPaths = ["./desktop_pc/scene.gltf", "./planet/scene.gltf"];
-
-    const loader = new GLTFLoader();
-
-    const loadObject = (path) => {
-      return new Promise((resolve, reject) => {
-        loader.load(
-          path,
-          (gltf) => {
-            // Object loaded successfully
-            resolve(gltf);
-          },
-          (progress) => {
-            // Progress callback
-            setLoadingProgress((prevProgress) =>
-              Math.round(
-                ((prevProgress + progress.loaded) / objectPaths.length) * 100
-              )
-            );
-          },
-          (error) => {
-            // Error callback
-            reject(error);
-          }
-        );
-      });
-    };
-
-    // Load computer model first
-    const loadComputerModel = async () => {
-      try {
-        const computerObject = await loadObject(objectPaths[0]);
-
-        // Do something with the loaded computer object if needed
-
-        // Load planet model next
-        const planetObject = await loadObject(objectPaths[1]);
-
-        // Do something with the loaded planet object if needed
-
-        onComplete();
-      } catch (error) {
-        console.error("Error loading 3D objects:", error);
-        // Handle error if needed
-      }
-    };
-
-    loadComputerModel();
-
-    // Cleanup
-    return () => {
-    };
-  }, []);
-
-  return null;
 };
 
 export default App;
