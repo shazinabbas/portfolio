@@ -136,7 +136,7 @@ const projects = [
 {
     name: "CarRental",
   description:
-    "SocialConnect is an innovative Figma design that envisions a mobile app aimed at connecting users with similar interests, fostering engaging discussions, and facilitating valuable networking opportunities. The design showcases a sleek and intuitive user interface, designed to provide a seamless experience for users to explore, connect, and interact with like-minded individuals.",
+    "CarRental is a comprehensive Android application tailored for car owners who rent out their vehicles. This user-friendly platform enables effortless monitoring of rented cars, tracking their current status, income, and providing insightful analytics. With real-time insights and seamless management capabilities, CarRental empowers car owners to efficiently oversee their rental business, ensuring a smooth and profitable experience.",
   tags: [
     {
       name: "Java",
@@ -157,7 +157,7 @@ const projects = [
   {
     name: "Uber Data Analytics",
   description:
-    "SocialConnect is an innovative Figma design that envisions a mobile app aimed at connecting users with similar interests, fostering engaging discussions, and facilitating valuable networking opportunities. The design showcases a sleek and intuitive user interface, designed to provide a seamless experience for users to explore, connect, and interact with like-minded individuals.",
+    "Uber Data Analytics integrates Python and Google Cloud with MAGE-AI to deliver comprehensive insights from Uber datasets. Unveiling key metrics like total rides and income types, this solution empowers data-driven decision-making and operational optimization within the ride-sharing industry",
   tags: [
     {
       name: "Python",
