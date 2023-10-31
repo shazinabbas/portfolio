@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { useProgress } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import {
   About,
   Contact,
-  Feedbacks,
   Hero,
   Navbar,
   Tech,
@@ -15,6 +14,8 @@ import {
   BottomBar,
 } from "./components";
 import { loader } from "./assets";
+import LoadingBar from 'react-top-loading-bar';
+
 
 const LoadingPage = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
   const [showBottomBar, setShowBottomBar] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const { progress } = useProgress();
+  const loadingBarRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,6 +74,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
+        <LoadingBar color='#f11946' ref={loadingBarRef} /> 
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
