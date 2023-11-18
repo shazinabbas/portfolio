@@ -1,4 +1,6 @@
 import logo from "./logo.svg";
+import union from "./Union.svg";
+
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -42,6 +44,7 @@ import loader from "./videos/loader.mp4"
 
 
 export {
+    union,
 preview,
 carrental,
 loader,

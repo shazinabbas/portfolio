@@ -40,12 +40,12 @@ const App = () => {
     };
   }, []);
 
-  useEffect(() => {
-    loadingBarRef.current.continuousStart();
-    if (progress === 100) {
-      loadingBarRef.current.complete();
-    }
-  }, [progress]);
+  // useEffect(() => {
+  //   loadingBarRef.current.continuousStart();
+  //   if (progress === 100) {
+  //     loadingBarRef.current.complete();
+  //   }
+  // }, [progress]);
 
   return (
     <BrowserRouter>
