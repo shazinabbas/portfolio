@@ -13,7 +13,6 @@ import {
   Experience,
   BottomBar,
 } from "./components";
-import { loader } from "./assets";
 import LoadingBar from 'react-top-loading-bar';
 
 
@@ -40,12 +39,6 @@ const App = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   loadingBarRef.current.continuousStart();
-  //   if (progress === 100) {
-  //     loadingBarRef.current.complete();
-  //   }
-  // }, [progress]);
 
   return (
     <BrowserRouter>
@@ -56,9 +49,10 @@ const App = () => {
           <Hero />
         </div>
         <About />
+        <Works />
         <Experience />
         <Tech />
-        <Works />
+        
         {/* <Feedbacks /> */}
         <div className="relative z-0">
           <Contact />
