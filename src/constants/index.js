@@ -31,7 +31,9 @@ uber,
 teachnook,
 agumentik,
   carrental,
-preview
+  preview,
+  battery,
+batteryflow,
 } from "../assets";
 
 export const navLinks = [
@@ -134,10 +136,33 @@ const technologies = [
 
 const projects = [
   
+  {
+    name: "Remaining Useful Life prediction of Lithium Batteries using Gaussian Process Regression with Indirect Health Indicators",
+  description:
+    "This study focuses on accurately estimating the Remaining Useful Life (RUL) of lithium-ion batteries using Gaussian Process Regression (GPR) and comparing it to other....",
+  tags: [
+    {
+      name: "Python",
+      color: "blue-text-gradient",
+    },
+    {
+      name: "MATLAB",
+      color: "green-text-gradient",
+    },
+    // {
+    //   name: "Android Studio",
+    //   color: "pink-text-gradient",
+    // },
+  ],
+  image: batteryflow,
+  source_code_link: "https://github.com/shazinabbas/RUL-Prediction-of-Lithium-ion-Batteries-with-GPR-Indirect-Indicators",
+  customSlug: "battery",
+  },
+
 {
     name: "CarRental",
   description:
-    "CarRental is a comprehensive Android application tailored for car owners who rent out their vehicles. This user-friendly platform enables effortless monitoring of rented cars, tracking their current status, income, and providing insightful analytics. With real-time insights and seamless management capabilities, CarRental empowers car owners to efficiently oversee their rental business, ensuring a smooth and profitable experience.",
+    "CarRental is a comprehensive Android application tailored for car owners who rent out their vehicles. This user-friendly platform enables effortless monitoring of rented cars, tracking their current status, income, and providing insightful analytics. With real-time insights and seamless management capabilities, CarRental empowers car owners to efficiently oversee their rental business, ensuring a smooth and prof...",
   tags: [
     {
       name: "Java",
@@ -154,11 +179,34 @@ const projects = [
   ],
   image: carrental,
   source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
+  customSlug: "carrental",
+  
+  },
+  {
+    name: "SocialConnect",
+  description:
+    "SocialConnect is an innovative Figma design that envisions a mobile app aimed at connecting users with similar interests, fostering engaging discussions, and facilitating valuable networking opportunities. The design showcases a sleek and intuitive user interface, designed to provide a seamless experience for users to explore, connect, and interact with li...",
+  tags: [
+    {
+      name: "Figma",
+      color: "blue-text-gradient",
+    },
+    {
+      name: "UI",
+      color: "green-text-gradient",
+    },
+    {
+      name: "UX",
+      color: "pink-text-gradient",
+    },
+  ],
+  image: socialconnect,
+  source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
 },
   {
     name: "Uber Data Analytics",
   description:
-    "Uber Data Analytics integrates Python and Google Cloud with MAGE-AI to deliver comprehensive insights from Uber datasets. Unveiling key metrics like total rides and income types, this solution empowers data-driven decision-making and operational optimization within the ride-sharing industry",
+    "Uber Data Analytics integrates Python and Google Cloud with MAGE-AI to deliver comprehensive insights from Uber datasets. Unveiling key metrics like total rides and income types, this solution empowers data-driven decision-making and operational optimization within...",
   tags: [
     {
       name: "Python",
@@ -176,31 +224,11 @@ const projects = [
   image: uber,
   source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
 },
-  {
-      name: "SocialConnect",
-    description:
-      "SocialConnect is an innovative Figma design that envisions a mobile app aimed at connecting users with similar interests, fostering engaging discussions, and facilitating valuable networking opportunities. The design showcases a sleek and intuitive user interface, designed to provide a seamless experience for users to explore, connect, and interact with like-minded individuals.",
-    tags: [
-      {
-        name: "Figma",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "UI",
-        color: "green-text-gradient",
-      },
-      {
-        name: "UX",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: socialconnect,
-    source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
-  },
+  
   {
     name: "OutPass",
     description:
-      "Android app that will generate digital outpasses for hostellers who need to leave their hostels for various reasons such as going home, medical emergencies, etc. The main objective of the app is to provide a hassle-free and paperless way for hostellers to generate a valid outpass without the need for physical paperwork or manual approvals.",
+      "Android app that will generate digital outpasses for hostellers who need to leave their hostels for various reasons such as going home, medical emergencies, etc. The main objective of the app is to provide a hassle-free and paperless way for hostellers to generate a valid outpass without the need for physical paperwor...",
     tags: [
       {
         name: "java",
@@ -222,7 +250,7 @@ const projects = [
   {
     name: "Quizzit",
     description:
-      "QUIZZIT is Graphical User Interface(GUI) quiz application using the Tkinter and firebase as realtime database in python. The major goal of this project is to create and join quizzes with ease which makes it fun and interactive. Quizzes can be made regardless of the number of questions with time restriction as a choice.",
+      "QUIZZIT is Graphical User Interface(GUI) quiz application using the Tkinter and firebase as realtime database in python. The major goal of this project is to create and join quizzes with ease which makes it fun and interactive. Quizzes can be made regardless of the number of questions with time restriction as a choice...",
     tags: [
       {
         name: "python",
@@ -243,7 +271,7 @@ const projects = [
   {
     name: "SES",
     description:
-      "A management system which can be used in the schools and colleges for registering and managing the details during sports fest. It allows users to register and manage participant details, event schedules, rules, and results. It helps organize and manage sports fests efficiently and effectively.",
+      "A management system which can be used in the schools and colleges for registering and managing the details during sports fest. It allows users to register and manage participant details, event schedules, rules, and results. It helps organize and manage sports fests efficie...",
     tags: [
       {
         name: "C++",

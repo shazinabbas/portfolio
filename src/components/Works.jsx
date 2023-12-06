@@ -6,9 +6,13 @@ import { figma, github1 } from '../assets';
 import { SectionWrapper } from '../hoc';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
+import { Link } from 'react-router-dom';
 
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link }) => {
+const ProjectCard = ({ index, name, description, tags, image, source_code_link,customSlug }) => {
+  // const projectSlug = name.toLowerCase().replace(/\s+/g, '-');
+
+
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
@@ -42,8 +46,12 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
           <h3 className="text-white font-bold text-[20px] sm:text-[24px]">{name}</h3>
           <p className="mt-2 text-secondary text-[12px] sm:text-[14px] leading-[16px] sm:leading-[20px]">
             {description}
+            <Link to={`/blog/${customSlug}`} className="gradient-text cursor-pointer mt-2 position-relative">
+              Read more
+            </Link>
           </p>
         </div>
+        
         <div className="mt-2 sm:mt-4 flex flex-wrap gap-1 sm:gap-2">
           {tags.map((tag, index) => (
             <p
@@ -54,6 +62,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link }
             </p>
           ))}
         </div>
+        
       </Tilt>
     </motion.div>
   );
@@ -83,10 +92,11 @@ const Works = () => {
       <div className="mt-20 flex flex-wrap gap-7 sm:gap-4">
         {projects.map((project, index) => (
         <ProjectCard
-          key={`project-${index}`}
-          index={index}
-          {...project}
-        />
+        key={`project-${index}`}
+        index={index}
+        customSlug={project.customSlug}  
+        {...project}
+      />
   ))}
 </div>
 

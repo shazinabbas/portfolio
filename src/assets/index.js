@@ -9,6 +9,12 @@ import github1 from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
+import battery from "./battery.png";
+
+import batteryflow from "./batteryflow.gif";
+
+
+
 import css from "./tech/css.png";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
@@ -44,7 +50,9 @@ import loader from "./videos/loader.mp4"
 
 
 export {
-    union,
+    battery,
+    batteryflow,
+union,
 preview,
 carrental,
 loader,

@@ -19,6 +19,20 @@
   display: block;
 }
 
+.gradient-text {
+  background-image: linear-gradient(to right, #bf61ff, #00cea8); /* Replace with your gradient colors */
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200% 100%;
+  transition: background-position 0.3s;
+}
+
+.gradient-text:hover {
+  background-position: -100% 0;
+}
+
+
+
 .black-gradient {
   background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
