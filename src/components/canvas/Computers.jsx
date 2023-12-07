@@ -11,7 +11,7 @@ const Computers = ({ isMobile }) => {
 
     <mesh>
       <Float  speed={1.75} rotationIntensity={1} floatIntensity={2}></Float>
-      <hemisphereLight intensity={0.15}
+      <hemisphereLight intensity={5}
       groundColor="black" />
       <pointLight intensity={1} />
       <spotLight 
