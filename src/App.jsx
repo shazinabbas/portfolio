@@ -1,7 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import { BrowserRouter } from "react-router-dom";
-import { useProgress } from "@react-three/drei";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   About,
   Contact,
@@ -12,14 +10,43 @@ import {
   StarsCanvas,
   Experience,
   BottomBar,
-} from "./components";
-import LoadingBar from 'react-top-loading-bar';
+  Blogs,
+  Error404, 
+} from './components';
 
+const LandingPage = ({ showBottomBar }) => (
+  <div className="relative z-0 bg-primary">
+    <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+      <Navbar />
+      <Hero />
+    </div>
+    <About />
+    <Works />
+    <Experience />
+    <Tech />
+
+    <div className="relative z-0">
+      <Contact />
+      <StarsCanvas />
+      {showBottomBar && <BottomBar />}
+    </div>
+  </div>
+);
+
+const BlogsPage = () => (
+  <div className="relative z-0 bg-primary">
+    <Blogs />
+  </div>
+);
+
+const ErrorPage = () => (
+  <div className="relative z-0 bg-primary">
+    <Error404 />
+  </div>
+);
 
 const App = () => {
   const [showBottomBar, setShowBottomBar] = useState(false);
-  const { progress } = useProgress();
-  const loadingBarRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,35 +59,27 @@ const App = () => {
       setShowBottomBar(isAtBottom);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-
   return (
-    <BrowserRouter>
-      <div className="relative z-0 bg-primary">
-        <LoadingBar color='#915eff' ref={loadingBarRef} /> 
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
-          <Navbar />
-          <Hero />
-        </div>
-        <About />
-        <Works />
-        <Experience />
-        <Tech />
-        
-        {/* <Feedbacks /> */}
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
-          {showBottomBar && <BottomBar />}
-        </div>
-      </div>
-    </BrowserRouter>
+    <Router>
+      <Routes>
+        {/* Landing page route */}
+        <Route path="/" element={<LandingPage showBottomBar={showBottomBar} />} />
+
+        {/* Blogs route */}
+
+        <Route path="/blog/:customSlug" element={<BlogsPage />} />
+
+        {/* Error route */}
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
   );
 };
 

@@ -7,7 +7,9 @@ import Experience from './Experience';
 import Works from './Works';
 import Contact from './Contact';
 import BottomBar from './Bottombar';
-
+import Homepage from './Homepage';
+import Blogs from './Blogs';
+import Error404 from './Error404';
 
 export {
   BottomBar,
@@ -21,5 +23,9 @@ export {
   EarthCanvas, 
   BallCanvas, 
   ComputersCanvas, 
-  StarsCanvas
+  StarsCanvas,
+  Homepage,
+  Blogs,
+  Error404,
+  
 }

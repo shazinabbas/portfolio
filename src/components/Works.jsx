@@ -8,7 +8,7 @@ import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 import { Link } from 'react-router-dom';
 
-const ProjectCard = ({ index, name, description, tags, image, source_code_link, customSlug }) => {
+const ProjectCard = ({ index, name, description, tags, image, source_code_link, customSlug, fig }) => {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 
   useLayoutEffect(() => {
@@ -44,8 +44,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
                   className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
                 >
                   <img
-                    src={github1}
-                    alt={figma}
+                    src={fig ? figma : github1}
                     className="w-1/2 h-1/2 object-contain"
                   />
                 </div>
@@ -58,6 +57,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
                 <Link to={`/blog/${customSlug}`} className="gradient-text cursor-pointer mt-2 position-relative">
                   Read more
                 </Link>
+
               </p>
             </div>
             <div className="mt-2 sm:mt-4 flex flex-wrap gap-1 sm:gap-2">
@@ -86,8 +86,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
                 className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
               >
                 <img
-                  src={github1}
-                  alt={figma}
+                  src={fig ? figma : github1}
                   className="w-1/2 h-1/2 object-contain"
                 />
               </div>
@@ -100,6 +99,7 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
               <Link to={`/blog/${customSlug}`} className="gradient-text cursor-pointer mt-2 position-relative">
                 Read more
               </Link>
+
             </p>
           </div>
           <div className="mt-2 sm:mt-4 flex flex-wrap gap-1 sm:gap-2">

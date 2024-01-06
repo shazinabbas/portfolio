@@ -39,6 +39,7 @@ import linkedin from "./company/linkedin.png";
 
 import carrent from "./carrent.png";
 import carrental from "./CarRental.png";
+import carrentalflow from "./CarrentalFlow.gif";
 import preview from "./Preview.png";
 
 import jobit from "./jobit.png";
@@ -52,6 +53,7 @@ import loader from "./videos/loader.mp4"
 export {
     battery,
     batteryflow,
+carrentalflow,
 union,
 preview,
 carrental,

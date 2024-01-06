@@ -34,6 +34,7 @@ agumentik,
   preview,
   battery,
 batteryflow,
+carrentalflow,
 } from "../assets";
 
 export const navLinks = [
@@ -177,10 +178,11 @@ const projects = [
       color: "pink-text-gradient",
     },
   ],
-  image: carrental,
+  image: carrentalflow,
   source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
   customSlug: "carrental",
-  
+  fig: true,
+
   },
   {
     name: "SocialConnect",
@@ -202,6 +204,9 @@ const projects = [
   ],
   image: socialconnect,
   source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
+    customSlug: "socialconnect",
+    fig: true,
+
 },
   {
     name: "Uber Data Analytics",
@@ -222,7 +227,8 @@ const projects = [
     },
   ],
   image: uber,
-  source_code_link: "https://www.figma.com/file/SiB1mvoA3reZwABHblJeRY/SocialConnect?type=design&node-id=12%3A1335&t=V8FHGbVfqIZaGEFc-1",
+  source_code_link: "https://github.com/shazinabbas/Uber-Data-Analytics",
+  customSlug: "uber-data-analytics",
 },
   
   {
@@ -245,7 +251,6 @@ const projects = [
     ],
     image: carrent,
     source_code_link: "https://github.com/shazinabbas/OutPass",
-    fig: true,
   },
   {
     name: "Quizzit",
@@ -317,4 +322,19 @@ const experiences = [
     ],
   },
 ];
-export { services, technologies, projects, experiences };
+
+const blogs = [
+  {
+    customSlug: 'battery',
+    title: 'Remaining Useful Life prediction of Lithium Batteries using Gaussian Process Regression with Indirect Health Indicators',
+    content: 'This study focuses on accurately estimating the Remaining Useful Life (RUL) of lithium-ion batteries using Gaussian Process Regression (GPR) and comparing it to other....',
+  },
+  {
+    customSlug: 'carrental',
+    title: 'Blog Title 2',
+    content: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  },
+];
+
+
+export { services, technologies, projects, experiences, blogs };
