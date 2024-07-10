@@ -48,9 +48,12 @@ import socialconnect from "./SocialConnect.jpeg";
 import uber from "./Mockup.jpeg";
 
 import loader from "./videos/loader.mp4"
-
+import lanyard from "./lanyard.png"
+import card from "./card.glb"
 
 export {
+    card,
+    lanyard,
     battery,
     batteryflow,
 carrentalflow,
