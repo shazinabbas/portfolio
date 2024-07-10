@@ -10,6 +10,8 @@ import BottomBar from './Bottombar';
 import Homepage from './Homepage';
 import Blogs from './Blogs';
 import Error404 from './Error404';
+import LoadingPage from './LoadingPage';
+
 
 export {
   BottomBar,
@@ -27,5 +29,5 @@ export {
   Homepage,
   Blogs,
   Error404,
-  
+  LoadingPage,
 }
