@@ -77,7 +77,7 @@ const App = () => {
         <Route path="/blog/:customSlug" element={<BlogsPage />} />
 
         {/* Error route */}
-        <Route path="*" element={<ErrorPage />} />
+        {/* <Route path="*" element={<ErrorPage />} /> */}
       </Routes>
     </Router>
   );
