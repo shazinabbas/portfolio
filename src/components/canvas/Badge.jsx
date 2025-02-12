@@ -4,12 +4,12 @@ import { Canvas, extend, useThree, useFrame } from '@react-three/fiber';
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei';
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier';
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
-
+import { newLanyard } from '../../assets';
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
 useGLTF.preload('./badge/badge.glb');
-useTexture.preload('./src/assets/newLanyard.png');
+useTexture.preload(newLanyard);
 
 function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef();
@@ -17,7 +17,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 };
 
   const { nodes, materials } = useGLTF('./badge/badge.glb');
-  const texture = useTexture('./src/assets/newLanyard.png');
+  const texture = useTexture(newLanyard);
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]));
   const [dragged, drag] = useState(false);
