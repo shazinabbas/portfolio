@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import { styles } from '../styles';
 import { navLinks } from '../constants';
-import { logo, menu, close, union } from '../assets';
+import { logo, menu, close, msLogo } from '../assets';
 
 
 const Navbar = () => {
@@ -18,11 +18,11 @@ const Navbar = () => {
            window.scrollTo(0, 0);;
           }}
         >
-          <img src={union} alt="logo" className="w-9 h-9 object-contain" />
+          <img src={msLogo} alt="logo" className="w-9 h-9 object-contain" />
           <p className="text-white text-[18px] 
             font-bold cursor-pointer flex">Mohammed Shazin
             <div>&nbsp;</div><span className="sm:block hidden">
-            | Data Scientist</span></p>
+            | Associate Software Engineer</span></p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10"> 
           {navLinks.map((link) => (
