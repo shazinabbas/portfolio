@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   About,
@@ -11,7 +11,7 @@ import {
   Experience,
   BottomBar,
   Blogs,
-  Error404, 
+  Error404,
 } from './components';
 
 const LandingPage = ({ showBottomBar }) => (
@@ -24,7 +24,6 @@ const LandingPage = ({ showBottomBar }) => (
     <Works />
     <Experience />
     <Tech />
-
     <div className="relative z-0">
       <Contact />
       <StarsCanvas />
@@ -48,36 +47,26 @@ const ErrorPage = () => (
 const App = () => {
   const [showBottomBar, setShowBottomBar] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollPosition = window.scrollY;
+  const handleScroll = useCallback(() => {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollPosition = window.scrollY;
 
-      const isAtBottom = scrollPosition + windowHeight >= documentHeight;
-
-      setShowBottomBar(isAtBottom);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    // Ensuring we correctly determine if the user is at the bottom
+    setShowBottomBar(scrollPosition + windowHeight >= documentHeight - 1);
   }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
 
   return (
     <Router>
       <Routes>
-        {/* Landing page route */}
         <Route path="/" element={<LandingPage showBottomBar={showBottomBar} />} />
-
-        {/* Blogs route */}
-
-        {/* <Route path="/blog/:customSlug" element={<BlogsPage />} /> */}
-
-        {/* Error route */}
-        {/* <Route path="*" element={<ErrorPage />} /> */}
+        <Route path="/blog/:customSlug" element={<BlogsPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );
