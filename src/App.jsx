@@ -62,7 +62,7 @@ const App = () => {
   }, [handleScroll]);
 
   return (
-    <Router>
+    <Router basename='/portfolio'>
       <Routes>
         <Route path="/" element={<LandingPage showBottomBar={showBottomBar} />} />
         <Route path="/blog/:customSlug" element={<BlogsPage />} />
