@@ -7,6 +7,7 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 
 
 extend({ MeshLineGeometry, MeshLineMaterial });
+
 useGLTF.preload('./badge/badge.glb');
 useTexture.preload('./src/assets/newLanyard.png');
 
@@ -14,6 +15,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef();
   const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3();
   const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 };
+
   const { nodes, materials } = useGLTF('./badge/badge.glb');
   const texture = useTexture('./src/assets/newLanyard.png');
   const { width, height } = useThree((state) => state.size);
