@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "VCR OSD MONO";
+  src: url(assets/fonts/VCR_OSD_MONO.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;

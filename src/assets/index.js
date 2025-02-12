@@ -55,7 +55,10 @@ import newLanyard from "./newLanyard.png"
 
 import msLogo from "./msLogo.png"
 
+import VCRFont from "./fonts/VCR_OSD_MONO.ttf"
+
 export {
+    VCRFont,
     msLogo,
     newLanyard,
     kaleris,
