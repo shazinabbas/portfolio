@@ -74,7 +74,7 @@ const App = () => {
 
         {/* Blogs route */}
 
-        <Route path="/blog/:customSlug" element={<BlogsPage />} />
+        {/* <Route path="/blog/:customSlug" element={<BlogsPage />} /> */}
 
         {/* Error route */}
         {/* <Route path="*" element={<ErrorPage />} /> */}
