@@ -36,6 +36,7 @@ import teachnook from "./company/teachnook.png";
 import agumentik from "./company/agumentik.png";
 import instagram from "./company/instagram.png";
 import linkedin from "./company/linkedin.png";
+import kaleris from "./company/kaleris.jpeg";
 
 import carrent from "./carrent.png";
 import carrental from "./CarRental.png";
@@ -50,8 +51,14 @@ import uber from "./Mockup.jpeg";
 import loader from "./videos/loader.mp4"
 
 import lanyard from "./lanyard.png"
+import newLanyard from "./newLanyard.png"
+
+import msLogo from "./msLogo.png"
 
 export {
+    msLogo,
+    newLanyard,
+    kaleris,
     lanyard,
     battery,
     batteryflow,

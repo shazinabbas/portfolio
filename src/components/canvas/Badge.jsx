@@ -7,15 +7,15 @@ import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 
 
 extend({ MeshLineGeometry, MeshLineMaterial });
-useGLTF.preload('./badge/card.glb');
-useTexture.preload('./src/assets/lanyard.png');
+useGLTF.preload('./badge/badge.glb');
+useTexture.preload('./src/assets/newLanyard.png');
 
 function Band({ maxSpeed = 50, minSpeed = 10 }) {
   const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef();
   const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3();
   const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 };
-  const { nodes, materials } = useGLTF('./badge/card.glb');
-  const texture = useTexture('./src/assets/lanyard.png');
+  const { nodes, materials } = useGLTF('./badge/badge.glb');
+  const texture = useTexture('./src/assets/newLanyard.png');
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]));
   const [dragged, drag] = useState(false);
@@ -78,6 +78,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group
             scale={2.25}
+            rotation={[0,-0.1,0]}
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
@@ -102,15 +103,15 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
 export default function Badge() {
   return (
-    <Canvas camera={{ position: [2, 5, 11], fov: 28 }}> {/* Adjusted camera position */}
+    <Canvas camera={{ position: [2, 0, 11], fov: 28 }}> {/* Adjusted camera position */}
       <ambientLight intensity={Math.PI} />
       <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
         <Band />
       </Physics>
       <Environment background blur={0.75}>
-        <Lightformer intensity={2} color="white" position={[0, -1, 5]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+        <Lightformer intensity={2} color="#21B160" position={[0, -1, 5]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
         <Lightformer intensity={3} color="white" position={[-1, -1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
-        <Lightformer intensity={3} color="#9365F5" position={[1, 1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+        <Lightformer intensity={30} color="#21B160" position={[1, 1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
         <Lightformer intensity={10} color="white" position={[-10, 0, 14]} rotation={[0, Math.PI / 2, Math.PI / 3]} scale={[100, 10, 1]} />
       </Environment>
     </Canvas>

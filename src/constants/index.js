@@ -35,6 +35,7 @@ agumentik,
   battery,
 batteryflow,
 carrentalflow,
+kaleris,
 } from "../assets";
 
 export const navLinks = [
@@ -321,6 +322,18 @@ const experiences = [
       "Optimize designs for responsiveness anq accessibility across different devices and platforms.",
     ],
   },
+
+  {
+    title: "Associate Software Engineer Intern",
+    company_name: "Kaleris",
+    icon: kaleris,
+    iconBg: "#E6DEDD",
+    date: "Jun 2023 - Aug 2023",
+    points: [
+      
+    ],
+  },
+
 ];
 
 const blogs = [
