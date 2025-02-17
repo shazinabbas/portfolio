@@ -328,7 +328,7 @@ const experiences = [
     company_name: "Kaleris",
     icon: kaleris,
     iconBg: "#E6DEDD",
-    date: "Jun 2023 - Aug 2023",
+    date: "Jan 2025 - Present",
     points: [
       
     ],
