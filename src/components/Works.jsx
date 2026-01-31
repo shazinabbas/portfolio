@@ -52,13 +52,12 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
             </div>
             <div className="mt-3 sm:mt-5">
               <h3 className="text-white font-bold text-[20px] sm:text-[24px]">{name}</h3>
-              <p className="mt-2 text-secondary text-[12px] sm:text-[14px] leading-[16px] sm:leading-[20px]">
-                {description}
+              <div className="mt-2 text-secondary text-[12px] sm:text-[14px] leading-[16px] sm:leading-[20px]">
+                <span>{description}</span>
                 <Link to={`/blog/${customSlug}`} className="gradient-text cursor-pointer mt-2 position-relative">
                   Read more
                 </Link>
-
-              </p>
+              </div>
             </div>
             <div className="mt-2 sm:mt-4 flex flex-wrap gap-1 sm:gap-2">
               {tags.map((tag, index) => (
@@ -94,13 +93,12 @@ const ProjectCard = ({ index, name, description, tags, image, source_code_link, 
           </div>
           <div className="mt-3 sm:mt-5">
             <h3 className="text-white font-bold text-[20px] sm:text-[24px]">{name}</h3>
-            <p className="mt-2 text-secondary text-[12px] sm:text-[14px] leading-[16px] sm:leading-[20px]">
-              {description}
+            <div className="mt-2 text-secondary text-[12px] sm:text-[14px] leading-[16px] sm:leading-[20px]">
+              <span>{description}</span>
               <Link to={`/blog/${customSlug}`} className="gradient-text cursor-pointer mt-2 position-relative">
                 Read more
               </Link>
-
-            </p>
+            </div>
           </div>
           <div className="mt-2 sm:mt-4 flex flex-wrap gap-1 sm:gap-2">
             {tags.map((tag, index) => (
@@ -180,4 +178,5 @@ const Works = () => {
     </>
   );
 };
+
 export default SectionWrapper(Works, "");

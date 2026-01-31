@@ -65,7 +65,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
   return (
     <>
-      <group position={[3, 5, 1]}> {/* Adjusted position to move it to the right */}
+      <group position={[3, 5, 1]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
@@ -105,7 +105,7 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
 
 export default function Badge() {
   return (
-    <Canvas camera={{ position: [2, 0, 11], fov: 28 }}> {/* Adjusted camera position */}
+    <Canvas camera={{ position: [2, 0, 11], fov: 28 }}>
       <ambientLight intensity={Math.PI} />
       <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
         <Band />
