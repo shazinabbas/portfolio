@@ -8,11 +8,8 @@ const Computers = ({ isMobile }) => {
   const computer = useGLTF('./desktop_pc/scene.gltf')
   
   return (
-
     <mesh>
-      <Float  speed={1.75} rotationIntensity={1} floatIntensity={2}></Float>
-      <hemisphereLight intensity={5}
-      groundColor="black" />
+      <hemisphereLight intensity={5} groundColor="black" />
       <pointLight intensity={1} />
       <spotLight 
         position={isMobile ? [-100, 80, -10] : [-20, 50, 10]}
@@ -22,14 +19,14 @@ const Computers = ({ isMobile }) => {
         castShadow
         shadow-mapSize={1024}
       />
-      <primitive 
-        object={computer.scene}
-        scale={isMobile ? 0.5 : 0.75}
-        position={isMobile ? [-1, -2, -2.1] : [0, -3.25, -1.5]}
-        rotation={[2 * Math.PI, 0, 6.25]}
-        
+      <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
+        <primitive 
+          object={computer.scene}
+          scale={isMobile ? 0.5 : 0.75}
+          position={isMobile ? [-1, -2, -2.1] : [0, -3.25, -1.5]}
+          rotation={[2 * Math.PI, 0, 6.25]}
         />
-        
+      </Float>
     </mesh>
   )
 }

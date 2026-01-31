@@ -11,7 +11,7 @@ const Hero = () => {
       
       <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}>
         
-        <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-end items-center px-60 py-48">
+        <div className="absolute xs:bottom-10 bottom-32 w-full hidden sm:flex justify-end items-center px-4 sm:px-20 md:px-40 lg:px-60 py-48">
           <h1 className={`${styles.sectionSubText} text-white`}>
             <span className="text-[#31BB69]">Pull it!</span>
           </h1>

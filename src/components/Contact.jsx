@@ -27,22 +27,18 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    //template_ktximhd 
-    //service_30edeoh
-    //iQeLtaQGEp-t-JGIt
-
     emailjs.send(
-      'service_30edeoh', 
-      'template_ktximhd',
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
       {
         from_name: form.name,
         to_name: 'Shazin',
         from_email: form.email,
-        to_email: 'shazinabbas_m@srmap.edu.in',
+        to_email: import.meta.env.VITE_EMAILJS_TO_EMAIL,
         message: form.message,
       },
-        'iQeLtaQGEp-t-JGIt'
-      )
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
       .then(() => {
         setLoading(false);
         alert('Thank you. I will get back to you as soon as possible.');
@@ -65,7 +61,7 @@ const Contact = () => {
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div 
         variants={slideIn('left', 'tween', 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        className="flex-[0.75] bg-black-100 p-4 sm:p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>
           Get in touch
@@ -75,7 +71,7 @@ const Contact = () => {
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
+          className="mt-8 sm:mt-12 flex flex-col gap-6 sm:gap-8"
         >
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>

@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link to="/" className="flex items-center gap-2" onClick={() => {setActive(""); window.scrollTo(0, 0);}}>
           <img src={msLogo} alt="logo" className="w-9 h-9 object-contain" />
-          <span className="text-white text-[18px] font-bold cursor-pointer flex">Mohammed Shazin
+          <span className="text-white text-[14px] sm:text-[18px] font-bold cursor-pointer flex">Mohammed Shazin
             <span className="sm:block hidden">&nbsp;| Associate Software Engineer</span>
           </span>
         </Link>
@@ -29,15 +29,24 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img 
-            src={toggle ? close : menu} 
-            alt="menu" 
-            className="w-[28px] h-[28px] 
-            object-contain 
-            cursor-pointer" 
+          <button
+            type="button"
+            aria-label={toggle ? 'Close menu' : 'Open menu'}
+            aria-expanded={toggle}
+            className="w-[28px] h-[28px] object-contain cursor-pointer bg-transparent border-none p-0"
             onClick={() => setToggle(!toggle)}
-          />
-          <div className={`${!toggle?'hidden':'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-x1f`}>
+          >
+            <img 
+              src={toggle ? close : menu} 
+              alt=""
+              className="w-full h-full object-contain"
+            />
+          </button>
+          <div 
+            className={`${!toggle?'hidden':'flex'} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+            role="menu"
+            aria-hidden={!toggle}
+          >
             <ul className="list-none flex justify-end items-start flex-col gap-4"> 
             {navLinks.map((link) => (
               <li 

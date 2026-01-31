@@ -9,7 +9,6 @@ import {
 } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
-import { random } from "maath";
 
 const Ball = (props) => {
   const [decal] = useTexture([props.imgUrl]);
@@ -29,21 +28,11 @@ const Ball = (props) => {
         />
         
         <Decal
-          // autoRotate
           position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
           scale={1}
           map={decal}
           flatShading
-          
-        />
-        <OrbitControls 
-          autoRotate
-          autoRotateSpeed={0.005}
-          reverseOrbit={false}
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
         />
       </mesh>
     </Float>
