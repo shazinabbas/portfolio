@@ -328,10 +328,23 @@ const experiences = [
     company_name: "Kaleris",
     icon: kaleris,
     iconBg: "#E6DEDD",
-    date: "Jan 2025 - Present",
+    date: "Jan 2025 - Jun 2025",
     points: [
-      
+      "Developed and maintained backend services using Java.",
+      "Collaborated with cross-functional teams to deliver high-quality software solutions.",
+      "Gained hands-on experience with enterprise-level backend development practices and tools.",
     ],
+  },
+  {
+    title: "Full Stack Developer",
+    company_name: "Kaleris",
+    icon: kaleris,
+    iconBg: "#E6DEDD",
+    date: "Jul 2025 - Present",
+    points: [
+      "Building and maintaining a full-stack application for supply chain and logistics solutions using Java and Angular.",
+      "Contributing to enterprise software that powers terminal operations and yard management for global shipping and rail industries.",
+      "Collaborating with cross-functional teams to deliver high-quality software solutions."],
   },
 
 ];
