@@ -46,7 +46,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Here goes nothing about me. A 2nd year B.Tech CSE student with an emphasis of Data Science.
+        Full Stack Developer at Kaleris, building enterprise solutions for supply chain and logistics using Java, Angular, and Kubernetes. Passionate about creating scalable applications that power global shipping and terminal operations.
       </motion.p>
 
       <div className="mt-10 sm:mt-20 flex flex-wrap gap-6 sm:gap-10 justify-center">
