@@ -55,19 +55,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Data Science",
+    title: "Java",
     icon: web,
   },
   {
-    title: "Python",
+    title: "Angular",
     icon: mobile,
   },
   {
-    title: "Big Data",
+    title: "Typescript",
     icon: backend,
   },
   {
-    title: "Google Cloud",
+    title: "Kuberenetes",
     icon: creator,
   },
 ];
