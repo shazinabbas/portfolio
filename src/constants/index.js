@@ -336,7 +336,7 @@ const experiences = [
     ],
   },
   {
-    title: "Full Stack Developer",
+    title: "Associate Software Engineer",
     company_name: "Kaleris",
     icon: kaleris,
     iconBg: "#E6DEDD",
